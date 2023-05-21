@@ -40,7 +40,7 @@ class Grafo:
   
   def createAGM(self, numV, orderedEdges):
 
-    representantes = list(range(numV+1))
+    representantes = list(range(numV))
     compsConex = []
     for i in range(numV):
       compsConex.append(LinkedList())
