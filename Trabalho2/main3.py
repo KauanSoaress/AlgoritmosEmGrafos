@@ -40,14 +40,13 @@ class Grafo:
   
   def createAGM(self, numV, orderedEdges):
 
-    representantes = []
+    representantes = list(range(numV+1))
     compsConex = []
     for i in range(numV):
       compsConex.append(LinkedList())
       compsConex[i].primeiro = Node(i)
       compsConex[i].ultimo = compsConex[i].primeiro
       compsConex[i].tam = 1
-      representantes.append(i)
 
     agm = []
     while len(agm) != (numV-1):
