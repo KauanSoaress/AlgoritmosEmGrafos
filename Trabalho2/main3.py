@@ -49,6 +49,7 @@ class Grafo:
       compsConex[i].tam = 1
 
     agm = []
+    total = 0
     while len(agm) != (numV-1):
 
       edge = orderedEdges.pop(0)
@@ -57,6 +58,7 @@ class Grafo:
 
       if u != v:
         agm.append(edge)
+        total += float(edge[2])
         x = u
         y = v
         if compsConex[x].tam < compsConex[y].tam:
@@ -70,11 +72,6 @@ class Grafo:
         while z != None:
           representantes[z.value] = x
           z = z.prox
-
-    total = 0
-
-    for i in agm:
-      total += float(i[2])
 
     return total  
 
